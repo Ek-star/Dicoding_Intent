@@ -24,6 +24,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 // 3. Setelah activity tujuan sudah berhasil diciptakan, sekarang saatnya menambahkan suatu intent pada method onClick() di MainActivity menjadi sebagai berikut.
                 val moveIntent = Intent(this@MainActivity, MoveActivity::class.java)
                 startActivity(moveIntent)
+                // Metode startActivity(moveIntent) akan menjalankan activity baru tanpa membawa data. Objek intent yang diinputkan adalah objek moveIntent yang ketika kode ini dijalankan maka akan membuka MoveActivity.
             }
         }
     }
