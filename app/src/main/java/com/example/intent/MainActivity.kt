@@ -16,6 +16,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         // 1. Masuk ke MainActivity, tambahkan beberapa baris kode yang berfungsi untuk memperkenalkan button yang sudah ditambahkan di layout seperti ini.
         val btnMoveActivity: Button = findViewById(R.id.btn_move_activity)
         btnMoveActivity.setOnClickListener(this)
+
+        // Mengirim data pada Intent
+        val btnMoveWithDataActivity: Button = findViewById(R.id.btn_move_activity_data)
+        btnMoveWithDataActivity.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -25,6 +29,14 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 val moveIntent = Intent(this@MainActivity, MoveActivity::class.java)
                 startActivity(moveIntent)
                 // Metode startActivity(moveIntent) akan menjalankan activity baru tanpa membawa data. Objek intent yang diinputkan adalah objek moveIntent yang ketika kode ini dijalankan maka akan membuka MoveActivity.
+            }
+            R.id.btn_move_activity_data -> {
+
+                // Sekarang saatnya kita menambahkan data pada Intent menggunakan putExtra di dalam MainActivity
+                val moveWithDataIntent = Intent(this@MainActivity, MoveWithDataActivity::class.java)
+                moveWithDataIntent.putExtra(MoveWithDataActivity.EXTRA_NAME, "DicodingAcademy Boy")
+                moveWithDataIntent.putExtra(MoveWithDataActivity.EXTRA_AGE, 5)
+                startActivity(moveWithDataIntent)
             }
         }
     }
