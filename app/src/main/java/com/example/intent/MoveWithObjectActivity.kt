@@ -23,6 +23,7 @@ class MoveWithObjectActivity : AppCompatActivity() {
             @Suppress("DEPRECATION")
             intent.getParcelableExtra<Person>(EXTRA_PERSON)
         }
+
         if (person != null) {
             val text = "Name : ${person.name.toString()},\nEmail : ${person.email},\nAge : ${person.age},\nLocation : ${person.city}"
             tvObject.text = text
